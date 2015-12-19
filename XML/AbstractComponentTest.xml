@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:abstract_component xmlns:tns="http://storm.lia.ufc.br"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://storm.lia.ufc.br ../../HPC-Shelf-Core/ContextualContract.xsd "
+	name="Teste 12 10 2015" kind="1">
+	<tns:supertype name="Software" id_ac="2"></tns:supertype>
+	<tns:context_parameter name="cp teste 12 10 2015">
+		<tns:bound cc_name="BlockTridiagonal">
+			<tns:abstract_component></tns:abstract_component>
+		</tns:bound>
+	</tns:context_parameter>
+</tns:abstract_component>

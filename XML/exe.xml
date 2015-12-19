@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+
+	<name>TesteIT</name><ac_id>6</ac_id><component>
+	<id>6</id><parameter>
+		<cp_id>1</cp_id><value>Valor 1 do cp 1</value>
+		</parameter>
+	</component><component>
+    <id>6</id>
+    <parameter>
+    	<cp_id>2</cp_id><value>Valor 1 do cp 2</value>
+    	</parameter>
+    
+</component>
+	</root>

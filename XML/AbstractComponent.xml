@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:abstract_component xmlns:tns="http://storm.lia.ufc.br"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://storm.lia.ufc.br ../../HPC-Storm/ContextualContract.xsd "
+	name="Teste 12 10 2015" kind="1">
+	<tns:supertype name="CORE"></tns:supertype>
+</tns:abstract_component>

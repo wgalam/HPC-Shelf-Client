@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+	<concrete_unit name="CLUSTER" concrete_component="PROFILE">
+	<file name="file1" extension="java" folder="FALSE" build_cfg="makefile" version="1.5" file_type="BASE" url=""></file>
+	<file name="file2" extension="java" folder="FALSE" build_cfg="makefile" version="1.5" file_type="SOURCE" url=""></file>
+	</concrete_unit>
+</root>
