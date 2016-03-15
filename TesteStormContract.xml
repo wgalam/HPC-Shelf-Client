@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tns:context_contract xmlns:tns="http://storm.lia.ufc.br" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://storm.lia.ufc.br ContextualContract.xsd ">
-  <tns:context_arguments variable_cp_id="16">
-  	<tns:context_contract cc_id="23">
-  		<tns:abstract_component></tns:abstract_component>
-  	</tns:context_contract></tns:context_arguments>
-  <tns:abstract_component id_ac="35" >
-  	<tns:supertype id_ac="55"></tns:supertype>
-  	<tns:context_parameter cp_id="16"></tns:context_parameter></tns:abstract_component>
+<tns:context_contract xmlns:tns="http://storm.lia.ufc.br" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://storm.lia.ufc.br ../HPC-Shelf-Core/src/br/ufc/storm/xml/ContextualContract.xsd ">
+  <tns:abstract_component id_ac="109" /><tns:platform cc_name="Plataforma do Wagner">
+  	<tns:abstract_component id_ac="19"></tns:abstract_component>
+</tns:platform>
+	<tns:inner_components cc_name="Aninhado do contrato da plataforma">
+		<tns:abstract_component id_ac="123"></tns:abstract_component>
+	</tns:inner_components>
 </tns:context_contract>

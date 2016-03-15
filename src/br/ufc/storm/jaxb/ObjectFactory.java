@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2015.09.19 às 07:42:25 PM BRT 
+// Gerado em: 2016.02.18 às 02:55:50 PM BRT 
 //
 
 
@@ -32,8 +32,12 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _ContextContract_QNAME = new QName("http://storm.lia.ufc.br", "context_contract");
-    private final static QName _CandidateList_QNAME = new QName("http://storm.lia.ufc.br", "candidateList");
+    private final static QName _CandidateList_QNAME = new QName("http://storm.lia.ufc.br", "candidate_list");
+    private final static QName _UnitFile_QNAME = new QName("http://storm.lia.ufc.br", "unit_file");
+    private final static QName _ConcreteUnit_QNAME = new QName("http://storm.lia.ufc.br", "concrete_unit");
+    private final static QName _ContractList_QNAME = new QName("http://storm.lia.ufc.br", "contract_list");
     private final static QName _AbstractComponent_QNAME = new QName("http://storm.lia.ufc.br", "abstract_component");
+    private final static QName _ComputationalSystem_QNAME = new QName("http://storm.lia.ufc.br", "computational_system");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: br.ufc.storm.jaxb
@@ -59,6 +63,30 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UnitFileType }
+     * 
+     */
+    public UnitFileType createUnitFileType() {
+        return new UnitFileType();
+    }
+
+    /**
+     * Create an instance of {@link ConcreteUnitType }
+     * 
+     */
+    public ConcreteUnitType createConcreteUnitType() {
+        return new ConcreteUnitType();
+    }
+
+    /**
+     * Create an instance of {@link ContractList }
+     * 
+     */
+    public ContractList createContractList() {
+        return new ContractList();
+    }
+
+    /**
      * Create an instance of {@link AbstractComponentType }
      * 
      */
@@ -67,11 +95,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link AbstractUnitType }
+     * Create an instance of {@link ComputationalSystemType }
      * 
      */
-    public AbstractUnitType createAbstractUnitType() {
-        return new AbstractUnitType();
+    public ComputationalSystemType createComputationalSystemType() {
+        return new ComputationalSystemType();
     }
 
     /**
@@ -80,14 +108,6 @@ public class ObjectFactory {
      */
     public QualityArgumentType createQualityArgumentType() {
         return new QualityArgumentType();
-    }
-
-    /**
-     * Create an instance of {@link PlatformProfileType }
-     * 
-     */
-    public PlatformProfileType createPlatformProfileType() {
-        return new PlatformProfileType();
     }
 
     /**
@@ -104,30 +124,6 @@ public class ObjectFactory {
      */
     public CostParameterType createCostParameterType() {
         return new CostParameterType();
-    }
-
-    /**
-     * Create an instance of {@link RankingFunctionTermType }
-     * 
-     */
-    public RankingFunctionTermType createRankingFunctionTermType() {
-        return new RankingFunctionTermType();
-    }
-
-    /**
-     * Create an instance of {@link ContextParameterType }
-     * 
-     */
-    public ContextParameterType createContextParameterType() {
-        return new ContextParameterType();
-    }
-
-    /**
-     * Create an instance of {@link CostFunctionTermType }
-     * 
-     */
-    public CostFunctionTermType createCostFunctionTermType() {
-        return new CostFunctionTermType();
     }
 
     /**
@@ -171,6 +167,62 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link RankingArgumentType }
+     * 
+     */
+    public RankingArgumentType createRankingArgumentType() {
+        return new RankingArgumentType();
+    }
+
+    /**
+     * Create an instance of {@link AbstractUnitType }
+     * 
+     */
+    public AbstractUnitType createAbstractUnitType() {
+        return new AbstractUnitType();
+    }
+
+    /**
+     * Create an instance of {@link PlatformProfileType }
+     * 
+     */
+    public PlatformProfileType createPlatformProfileType() {
+        return new PlatformProfileType();
+    }
+
+    /**
+     * Create an instance of {@link RankingFunctionTermType }
+     * 
+     */
+    public RankingFunctionTermType createRankingFunctionTermType() {
+        return new RankingFunctionTermType();
+    }
+
+    /**
+     * Create an instance of {@link ContextParameterType }
+     * 
+     */
+    public ContextParameterType createContextParameterType() {
+        return new ContextParameterType();
+    }
+
+    /**
+     * Create an instance of {@link ContextArgumentValueType }
+     * 
+     */
+    public ContextArgumentValueType createContextArgumentValueType() {
+        return new ContextArgumentValueType();
+    }
+
+    /**
+     * Create an instance of {@link CostFunctionTermType }
+     * 
+     */
+    public CostFunctionTermType createCostFunctionTermType() {
+        return new CostFunctionTermType();
+    }
+
+    /**
      * Create an instance of {@link ConcreteComponentType }
      * 
      */
@@ -203,14 +255,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RankingArgumentType }
-     * 
-     */
-    public RankingArgumentType createRankingArgumentType() {
-        return new RankingArgumentType();
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ContextContract }{@code >}}
      * 
      */
@@ -223,9 +267,36 @@ public class ObjectFactory {
      * Create an instance of {@link JAXBElement }{@code <}{@link CandidateListType }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "candidateList")
+    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "candidate_list")
     public JAXBElement<CandidateListType> createCandidateList(CandidateListType value) {
         return new JAXBElement<CandidateListType>(_CandidateList_QNAME, CandidateListType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link UnitFileType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "unit_file")
+    public JAXBElement<UnitFileType> createUnitFile(UnitFileType value) {
+        return new JAXBElement<UnitFileType>(_UnitFile_QNAME, UnitFileType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ConcreteUnitType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "concrete_unit")
+    public JAXBElement<ConcreteUnitType> createConcreteUnit(ConcreteUnitType value) {
+        return new JAXBElement<ConcreteUnitType>(_ConcreteUnit_QNAME, ConcreteUnitType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ContractList }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "contract_list")
+    public JAXBElement<ContractList> createContractList(ContractList value) {
+        return new JAXBElement<ContractList>(_ContractList_QNAME, ContractList.class, null, value);
     }
 
     /**
@@ -235,6 +306,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "abstract_component")
     public JAXBElement<AbstractComponentType> createAbstractComponent(AbstractComponentType value) {
         return new JAXBElement<AbstractComponentType>(_AbstractComponent_QNAME, AbstractComponentType.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link ComputationalSystemType }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://storm.lia.ufc.br", name = "computational_system")
+    public JAXBElement<ComputationalSystemType> createComputationalSystem(ComputationalSystemType value) {
+        return new JAXBElement<ComputationalSystemType>(_ComputationalSystem_QNAME, ComputationalSystemType.class, null, value);
     }
 
 }

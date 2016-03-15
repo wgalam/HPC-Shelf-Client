@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2015.09.19 às 07:42:25 PM BRT 
+// Gerado em: 2016.02.18 às 02:55:50 PM BRT 
 //
 
 
@@ -29,7 +29,7 @@ import javax.xml.bind.annotation.XmlType;
  *       &lt;sequence>
  *         &lt;element name="supertype" type="{http://storm.lia.ufc.br}abstract_component_type" minOccurs="0"/>
  *         &lt;element name="context_parameter" type="{http://storm.lia.ufc.br}context_parameter_type" maxOccurs="unbounded" minOccurs="0"/>
- *         &lt;element name="inner_component" type="{http://storm.lia.ufc.br}abstract_component_type" maxOccurs="unbounded" minOccurs="0"/>
+ *         &lt;element name="inner_components" type="{http://storm.lia.ufc.br}abstract_component_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="abstract_unit" type="{http://storm.lia.ufc.br}abstract_unit_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="quality_parameters" type="{http://storm.lia.ufc.br}quality_parameter_type" maxOccurs="unbounded" minOccurs="0"/>
  *         &lt;element name="cost_parameters" type="{http://storm.lia.ufc.br}cost_parameter_type" maxOccurs="unbounded" minOccurs="0"/>
@@ -50,7 +50,7 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "abstract_component_type", propOrder = {
     "supertype",
     "contextParameter",
-    "innerComponent",
+    "innerComponents",
     "abstractUnit",
     "qualityParameters",
     "costParameters",
@@ -61,8 +61,8 @@ public class AbstractComponentType {
     protected AbstractComponentType supertype;
     @XmlElement(name = "context_parameter")
     protected List<ContextParameterType> contextParameter;
-    @XmlElement(name = "inner_component")
-    protected List<AbstractComponentType> innerComponent;
+    @XmlElement(name = "inner_components")
+    protected List<AbstractComponentType> innerComponents;
     @XmlElement(name = "abstract_unit")
     protected List<AbstractUnitType> abstractUnit;
     @XmlElement(name = "quality_parameters")
@@ -133,18 +133,18 @@ public class AbstractComponentType {
     }
 
     /**
-     * Gets the value of the innerComponent property.
+     * Gets the value of the innerComponents property.
      * 
      * <p>
      * This accessor method returns a reference to the live list,
      * not a snapshot. Therefore any modification you make to the
      * returned list will be present inside the JAXB object.
-     * This is why there is not a <CODE>set</CODE> method for the innerComponent property.
+     * This is why there is not a <CODE>set</CODE> method for the innerComponents property.
      * 
      * <p>
      * For example, to add a new item, do as follows:
      * <pre>
-     *    getInnerComponent().add(newItem);
+     *    getInnerComponents().add(newItem);
      * </pre>
      * 
      * 
@@ -154,11 +154,11 @@ public class AbstractComponentType {
      * 
      * 
      */
-    public List<AbstractComponentType> getInnerComponent() {
-        if (innerComponent == null) {
-            innerComponent = new ArrayList<AbstractComponentType>();
+    public List<AbstractComponentType> getInnerComponents() {
+        if (innerComponents == null) {
+            innerComponents = new ArrayList<AbstractComponentType>();
         }
-        return this.innerComponent;
+        return this.innerComponents;
     }
 
     /**

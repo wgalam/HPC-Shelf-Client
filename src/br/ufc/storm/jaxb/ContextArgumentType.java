@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2015.09.19 às 07:42:25 PM BRT 
+// Gerado em: 2016.02.18 às 02:55:50 PM BRT 
 //
 
 
@@ -28,7 +28,7 @@ import javax.xml.bind.annotation.XmlType;
  *         &lt;choice>
  *           &lt;element name="cp_id" type="{http://www.w3.org/2001/XMLSchema}int" minOccurs="0"/>
  *           &lt;element name="context_contract" type="{http://storm.lia.ufc.br}context_contract"/>
- *           &lt;element name="value" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *           &lt;element name="value" type="{http://storm.lia.ufc.br}context_argument_value_type"/>
  *         &lt;/choice>
  *       &lt;/sequence>
  *       &lt;attribute name="cc_id" type="{http://www.w3.org/2001/XMLSchema}int" />
@@ -55,7 +55,7 @@ public class ContextArgumentType {
     protected Integer cpId;
     @XmlElement(name = "context_contract")
     protected ContextContract contextContract;
-    protected String value;
+    protected ContextArgumentValueType value;
     @XmlAttribute(name = "cc_id")
     protected Integer ccId;
     @XmlAttribute(name = "variable_cp_id")
@@ -120,10 +120,10 @@ public class ContextArgumentType {
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link ContextArgumentValueType }
      *     
      */
-    public String getValue() {
+    public ContextArgumentValueType getValue() {
         return value;
     }
 
@@ -132,10 +132,10 @@ public class ContextArgumentType {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link ContextArgumentValueType }
      *     
      */
-    public void setValue(String value) {
+    public void setValue(ContextArgumentValueType value) {
         this.value = value;
     }
 

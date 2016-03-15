@@ -7,37 +7,38 @@ import java.util.Scanner;
 
 import org.apache.axis2.AxisFault;
 
-import br.ufc.storm.wservices.CoreServicesDBHandlerExceptionException;
-import br.ufc.storm.wservices.CoreServicesIOExceptionException;
-import br.ufc.storm.wservices.CoreServicesParserConfigurationExceptionException;
-import br.ufc.storm.wservices.CoreServicesSAXExceptionException;
-import br.ufc.storm.wservices.CoreServicesStub;
-import br.ufc.storm.wservices.CoreServicesStub.AddAbstractComponentResponse;
-import br.ufc.storm.wservices.CoreServicesStub.AddConcreteUnitResponse;
-import br.ufc.storm.wservices.CoreServicesStub.AddContextParameterResponse;
-import br.ufc.storm.wservices.CoreServicesStub.AddInnerComponentResponse;
-import br.ufc.storm.wservices.CoreServicesStub.AddInstantiationTypeResponse;
-import br.ufc.storm.wservices.CoreServicesStub.AddUnitFileResponse;
-import br.ufc.storm.wservices.CoreServicesStub.GetAbstractComponentResponse;
-import br.ufc.storm.wservices.CoreServicesStub.GetContextContractResponse;
-import br.ufc.storm.wservices.CoreServicesStub.GetContextParameterResponse;
-import br.ufc.storm.wservices.CoreServicesStub.ListContractResponse;
-import br.ufc.storm.wservices.CoreServicesStub.ListResponse;
-import br.ufc.storm.wservices.CoreServicesStub.ResolveResponse;
+import br.ufc.storm.webservices.CoreServicesDBHandlerExceptionException;
+import br.ufc.storm.webservices.CoreServicesIOExceptionException;
+import br.ufc.storm.webservices.CoreServicesParserConfigurationExceptionException;
+import br.ufc.storm.webservices.CoreServicesSAXExceptionException;
+import br.ufc.storm.webservices.CoreServicesStub;
+import br.ufc.storm.webservices.CoreServicesStub.AddAbstractComponentResponse;
+import br.ufc.storm.webservices.CoreServicesStub.AddConcreteUnitResponse;
+import br.ufc.storm.webservices.CoreServicesStub.AddContextParameterResponse;
+import br.ufc.storm.webservices.CoreServicesStub.AddInnerComponentResponse;
+import br.ufc.storm.webservices.CoreServicesStub.AddUnitFileResponse;
+import br.ufc.storm.webservices.CoreServicesStub.GetAbstractComponentResponse;
+import br.ufc.storm.webservices.CoreServicesStub.GetContextContractResponse;
+import br.ufc.storm.webservices.CoreServicesStub.GetContextParameterResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ListContractResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ListResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ResolveResponse;
+
 
 public class CoreServiceConsumer {
 
 	public static void main(String [] args){
-		//System.out.println(resolve("TesteStormContract.xml"));
-    	//System.out.println(getAbstractComponent("Certifier"));
-//    	System.out.println(getAbstractComponent("mImgtbl"));
+//		System.out.println(resolve("TesteStormContract.xml"));
+   // 	System.out.println(getAbstractComponent("Certifier"));
+    	//System.out.println(getAbstractComponent("mImgtbl"));
     		//	System.out.println(registerAbstractComponent("./XML/AbstractComponentTest.xml"));
-		System.out.println(getContextContract(35));
+		//System.out.println(getContextContract(35));
 //		System.out.println(listComponents());
-//		System.out.println(listContextContract(19));
+	//	System.out.println(listComponentslocal());
+	//	System.out.println(listContextContract(19));
 //		System.out.println(resolve("XML/m101/mImgTbl.xml"));
 //		System.out.println(resolve("XML/m101/mAdd.xml"));
-//		registerCUF("XML/concrete_unit_file.xml", "UNITS/teste.c");
+		registerCUF("XML/concrete_unit_fileMImgTbl.xml", "/home/wagner/montage/bin/mImgtbl");
 		
 		
 	}
@@ -50,7 +51,7 @@ public class CoreServiceConsumer {
 		}
 		CoreServicesStub stub = null;
 		try {
-			stub = new CoreServicesStub();
+			stub = new CoreServicesStub("http://localhost:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
 		} catch (AxisFault e1) {
 			e1.printStackTrace();
 		}
@@ -101,7 +102,7 @@ public class CoreServiceConsumer {
 	public static boolean registerUnitFile(String path, String filename){
 		CoreServicesStub stub = null;
 		try {
-			stub = new CoreServicesStub();
+			stub = new CoreServicesStub("http://storm.lia.ufc.br:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
 		} catch (AxisFault e1) {
 			e1.printStackTrace();
 		}
@@ -226,6 +227,26 @@ public class CoreServiceConsumer {
 		return response.get_return();
 	}
 	
+	public static String listComponentslocal(){
+		CoreServicesStub stub = null;
+		try {
+			stub = new CoreServicesStub("http://storm.lia.ufc.br:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
+		} catch (AxisFault e1) {
+			e1.printStackTrace();
+		}
+		//Cria a requisicao para o servico
+		CoreServicesStub.List request;
+		request = new CoreServicesStub.List();
+		//Invoca o servico
+		ListResponse response = null;
+		try {
+			response = stub.list(request);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return response.get_return();
+	}
+	
 	public static String listContextContract(int ac_id){
 		CoreServicesStub stub = null;
 		try {
@@ -240,7 +261,12 @@ public class CoreServiceConsumer {
 		//Invoca o servico
 		ListContractResponse response = null;
 		try {
-			response = stub.listContract(request);
+			try {
+				response = stub.listContract(request);
+			} catch (CoreServicesDBHandlerExceptionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}
@@ -388,7 +414,7 @@ public class CoreServiceConsumer {
 		return response.get_return();
 	}
 
-	public static boolean registerIT(String str){
+	/*public static boolean registerIT(String str){
 		try {
 			str = readFile(str);
 		} catch (IOException e2) {
@@ -413,7 +439,7 @@ public class CoreServiceConsumer {
 			e.printStackTrace();
 		}
 		return response.get_return();
-	}
+	}*/
 	/*public static int registerAU(String str){
 		try {
 			str = readFile(str);
@@ -469,32 +495,32 @@ public class CoreServiceConsumer {
 	}
 	 */
 
-	public static int registerCU(String str){
-		try {
-			str = readFile(str);
-		} catch (IOException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-		CoreServicesStub stub = null;
-		try {
-			stub = new CoreServicesStub();
-		} catch (AxisFault e1) {
-			e1.printStackTrace();
-		}
-		//Cria a requisicao para o servico
-		CoreServicesStub.AddConcreteUnit request;
-		request = new CoreServicesStub.AddConcreteUnit();
-		request.setCmp(str);
-		//Invoca o servico
-		AddConcreteUnitResponse response = null;
-		try {
-			response = stub.addConcreteUnit(request);
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
-		return response.get_return();
-	}
+//	public static int registerCU(String str){
+//		try {
+//			str = readFile(str);
+//		} catch (IOException e2) {
+//			// TODO Auto-generated catch block
+//			e2.printStackTrace();
+//		}
+//		CoreServicesStub stub = null;
+//		try {
+//			stub = new CoreServicesStub();
+//		} catch (AxisFault e1) {
+//			e1.printStackTrace();
+//		}
+//		//Cria a requisicao para o servico
+//		CoreServicesStub.AddConcreteUnit request;
+//		request = new CoreServicesStub.AddConcreteUnit();
+//		request.setCmp(str);
+//		//Invoca o servico
+//		AddConcreteUnitResponse response = null;
+//		try {
+//			response = stub.addConcreteUnit(request);
+//		} catch (RemoteException e) {
+//			e.printStackTrace();
+//		}
+//		return response.get_return();
+//	}
 	private static boolean registerCUF(String str, String path) {
 		try {
 			str = readFile(str);

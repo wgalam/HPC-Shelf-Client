@@ -2,7 +2,7 @@
 // Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2015.09.19 às 07:42:25 PM BRT 
+// Gerado em: 2016.02.18 às 02:55:50 PM BRT 
 //
 
 
@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;attribute name="au_name" type="{http://www.w3.org/2001/XMLSchema}string" />
- *       &lt;attribute name="abstract_component_name" type="{http://www.w3.org/2001/XMLSchema}string" />
+ *       &lt;attribute name="ac_id" type="{http://www.w3.org/2001/XMLSchema}int" />
  *       &lt;attribute name="au_id" type="{http://www.w3.org/2001/XMLSchema}int" />
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -39,8 +39,8 @@ public class AbstractUnitType {
 
     @XmlAttribute(name = "au_name")
     protected String auName;
-    @XmlAttribute(name = "abstract_component_name")
-    protected String abstractComponentName;
+    @XmlAttribute(name = "ac_id")
+    protected Integer acId;
     @XmlAttribute(name = "au_id")
     protected Integer auId;
 
@@ -69,27 +69,27 @@ public class AbstractUnitType {
     }
 
     /**
-     * Obtém o valor da propriedade abstractComponentName.
+     * Obtém o valor da propriedade acId.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public String getAbstractComponentName() {
-        return abstractComponentName;
+    public Integer getAcId() {
+        return acId;
     }
 
     /**
-     * Define o valor da propriedade abstractComponentName.
+     * Define o valor da propriedade acId.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Integer }
      *     
      */
-    public void setAbstractComponentName(String value) {
-        this.abstractComponentName = value;
+    public void setAcId(Integer value) {
+        this.acId = value;
     }
 
     /**
