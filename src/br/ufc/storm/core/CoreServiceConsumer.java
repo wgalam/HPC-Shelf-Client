@@ -36,9 +36,9 @@ public class CoreServiceConsumer {
 //		System.out.println(listComponents());
 	//	System.out.println(listComponentslocal());
 	//	System.out.println(listContextContract(19));
-//		System.out.println(resolve("XML/m101/mImgTbl.xml"));
+		System.out.println(resolve("XML/m101/mImgTbl2.xml"));
 //		System.out.println(resolve("XML/m101/mAdd.xml"));
-		registerCUF("XML/concrete_unit_fileMImgTbl.xml", "/home/wagner/montage/bin/mImgtbl");
+		//registerCUF("XML/concrete_unit_fileMImgTbl.xml", "/home/wagner/montage/bin/mImgtbl");
 		
 		
 	}
@@ -51,7 +51,8 @@ public class CoreServiceConsumer {
 		}
 		CoreServicesStub stub = null;
 		try {
-			stub = new CoreServicesStub("http://localhost:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
+			stub = new CoreServicesStub("http://storm.lia.ufc.br:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
+//			stub = new CoreServicesStub("http://localhost:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/");
 		} catch (AxisFault e1) {
 			e1.printStackTrace();
 		}

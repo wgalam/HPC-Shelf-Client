@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tns:context_contract xmlns:tns="http://storm.lia.ufc.br" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://storm.lia.ufc.br ../HPC-Shelf-Core/src/br/ufc/storm/xml/ContextualContract.xsd ">
-  <tns:abstract_component id_ac="109" /><tns:platform cc_name="Plataforma do Wagner">
+  <tns:abstract_component id_ac="109" />
+  <tns:platform cc_name="Plataforma do Wagner">
   	<tns:abstract_component id_ac="19"></tns:abstract_component>
 </tns:platform>
 	<tns:inner_components cc_name="Aninhado do contrato da plataforma">
