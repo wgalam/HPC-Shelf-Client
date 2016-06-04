@@ -61,22 +61,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addContextParameter method
-            * override this method for handling normal response from addContextParameter operation
-            */
-           public void receiveResultaddContextParameter(
-                    br.ufc.storm.webservices.CoreServicesStub.AddContextParameterResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from addContextParameter operation
-           */
-            public void receiveErroraddContextParameter(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for addContextContract method
             * override this method for handling normal response from addContextContract operation
             */
@@ -90,6 +74,22 @@
            * override this method for handling error response from addContextContract operation
            */
             public void receiveErroraddContextContract(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for addContextParameter method
+            * override this method for handling normal response from addContextParameter operation
+            */
+           public void receiveResultaddContextParameter(
+                    br.ufc.storm.webservices.CoreServicesStub.AddContextParameterResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from addContextParameter operation
+           */
+            public void receiveErroraddContextParameter(java.lang.Exception e) {
             }
                 
            /**
@@ -109,22 +109,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for listContract method
-            * override this method for handling normal response from listContract operation
-            */
-           public void receiveResultlistContract(
-                    br.ufc.storm.webservices.CoreServicesStub.ListContractResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from listContract operation
-           */
-            public void receiveErrorlistContract(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for getAbstractComponentByID method
             * override this method for handling normal response from getAbstractComponentByID operation
             */
@@ -138,6 +122,22 @@
            * override this method for handling error response from getAbstractComponentByID operation
            */
             public void receiveErrorgetAbstractComponentByID(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for listContract method
+            * override this method for handling normal response from listContract operation
+            */
+           public void receiveResultlistContract(
+                    br.ufc.storm.webservices.CoreServicesStub.ListContractResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from listContract operation
+           */
+            public void receiveErrorlistContract(java.lang.Exception e) {
             }
                 
            /**
@@ -205,22 +205,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for releasePlatform method
-            * override this method for handling normal response from releasePlatform operation
-            */
-           public void receiveResultreleasePlatform(
-                    br.ufc.storm.webservices.CoreServicesStub.ReleasePlatformResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from releasePlatform operation
-           */
-            public void receiveErrorreleasePlatform(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for addInnerComponent method
             * override this method for handling normal response from addInnerComponent operation
             */
@@ -234,6 +218,22 @@
            * override this method for handling error response from addInnerComponent operation
            */
             public void receiveErroraddInnerComponent(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for releasePlatform method
+            * override this method for handling normal response from releasePlatform operation
+            */
+           public void receiveResultreleasePlatform(
+                    br.ufc.storm.webservices.CoreServicesStub.ReleasePlatformResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from releasePlatform operation
+           */
+            public void receiveErrorreleasePlatform(java.lang.Exception e) {
             }
                 
            /**
@@ -285,6 +285,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for getStatus method
+            * override this method for handling normal response from getStatus operation
+            */
+           public void receiveResultgetStatus(
+                    br.ufc.storm.webservices.CoreServicesStub.GetStatusResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getStatus operation
+           */
+            public void receiveErrorgetStatus(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for list method
             * override this method for handling normal response from list operation
             */
@@ -298,6 +314,22 @@
            * override this method for handling error response from list operation
            */
             public void receiveErrorlist(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for instantiate method
+            * override this method for handling normal response from instantiate operation
+            */
+           public void receiveResultinstantiate(
+                    br.ufc.storm.webservices.CoreServicesStub.InstantiateResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from instantiate operation
+           */
+            public void receiveErrorinstantiate(java.lang.Exception e) {
             }
                 
            /**

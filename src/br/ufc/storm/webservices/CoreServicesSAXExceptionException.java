@@ -10,7 +10,7 @@ package br.ufc.storm.webservices;
 
 public class CoreServicesSAXExceptionException extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1458582048172L;
+    private static final long serialVersionUID = 1462805523693L;
     
     private br.ufc.storm.webservices.CoreServicesStub.CoreServicesSAXException faultMessage;
 
