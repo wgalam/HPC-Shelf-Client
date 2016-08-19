@@ -10,7 +10,7 @@ package br.ufc.storm.webservices;
 
 public class CoreServicesParserConfigurationExceptionException extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1462805523686L;
+    private static final long serialVersionUID = 1471636402471L;
     
     private br.ufc.storm.webservices.CoreServicesStub.CoreServicesParserConfigurationException faultMessage;
 

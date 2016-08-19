@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<abstract_component xmlns="http://storm.lia.ufc.br" name="LSSapp">
+<supertype name="Software" id_ac="2"/>
+<context_parameter name="par-teste-1">
+<bound cc_name="SparseLinearSystemSolver" cc_id="21"/>
+</context_parameter>
+<context_parameter name="par-teste-2">
+<bound cc_name="AcceleratorType" cc_id="28"/>
+</context_parameter>
+<inner_components name="mImgtbl">
+<supertype name="mImgtbl" id_ac="108"/>
+<abstract_unit au_name="mImgTbl_bin" au_id="27"/>
+<abstract_unit au_name="unique" au_id="25"/>
+</inner_components>
+<abstract_unit au_name="Unidade1"/>
+<abstract_unit au_name="Unidade2"/>
+<slices slice_id="27" inner_component_id="109"/>
+<slices slice_id="25" inner_component_id="109"/>
+</abstract_component>

@@ -45,6 +45,22 @@
 
         
            /**
+            * auto generated Axis2 call back method for addContextContract method
+            * override this method for handling normal response from addContextContract operation
+            */
+           public void receiveResultaddContextContract(
+                    br.ufc.storm.webservices.CoreServicesStub.AddContextContractResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from addContextContract operation
+           */
+            public void receiveErroraddContextContract(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for setObsolete method
             * override this method for handling normal response from setObsolete operation
             */
@@ -61,19 +77,99 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for addContextContract method
-            * override this method for handling normal response from addContextContract operation
+            * auto generated Axis2 call back method for convertContextContract method
+            * override this method for handling normal response from convertContextContract operation
             */
-           public void receiveResultaddContextContract(
-                    br.ufc.storm.webservices.CoreServicesStub.AddContextContractResponse result
+           public void receiveResultconvertContextContract(
+                    br.ufc.storm.webservices.CoreServicesStub.ConvertContextContractResponse result
                         ) {
            }
 
           /**
            * auto generated Axis2 Error handler
-           * override this method for handling error response from addContextContract operation
+           * override this method for handling error response from convertContextContract operation
            */
-            public void receiveErroraddContextContract(java.lang.Exception e) {
+            public void receiveErrorconvertContextContract(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getProfile method
+            * override this method for handling normal response from getProfile operation
+            */
+           public void receiveResultgetProfile(
+                    br.ufc.storm.webservices.CoreServicesStub.GetProfileResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getProfile operation
+           */
+            public void receiveErrorgetProfile(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for sortCandidates method
+            * override this method for handling normal response from sortCandidates operation
+            */
+           public void receiveResultsortCandidates(
+                    br.ufc.storm.webservices.CoreServicesStub.SortCandidatesResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from sortCandidates operation
+           */
+            public void receiveErrorsortCandidates(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for list method
+            * override this method for handling normal response from list operation
+            */
+           public void receiveResultlist(
+                    br.ufc.storm.webservices.CoreServicesStub.ListResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from list operation
+           */
+            public void receiveErrorlist(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for exportComponentSignature method
+            * override this method for handling normal response from exportComponentSignature operation
+            */
+           public void receiveResultexportComponentSignature(
+                    br.ufc.storm.webservices.CoreServicesStub.ExportComponentSignatureResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from exportComponentSignature operation
+           */
+            public void receiveErrorexportComponentSignature(java.lang.Exception e) {
+            }
+                
+           /**
+            * auto generated Axis2 call back method for getContextParameter method
+            * override this method for handling normal response from getContextParameter operation
+            */
+           public void receiveResultgetContextParameter(
+                    br.ufc.storm.webservices.CoreServicesStub.GetContextParameterResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from getContextParameter operation
+           */
+            public void receiveErrorgetContextParameter(java.lang.Exception e) {
             }
                 
            /**
@@ -189,6 +285,22 @@
             }
                 
            /**
+            * auto generated Axis2 call back method for exportContextContract method
+            * override this method for handling normal response from exportContextContract operation
+            */
+           public void receiveResultexportContextContract(
+                    br.ufc.storm.webservices.CoreServicesStub.ExportContextContractResponse result
+                        ) {
+           }
+
+          /**
+           * auto generated Axis2 Error handler
+           * override this method for handling error response from exportContextContract operation
+           */
+            public void receiveErrorexportContextContract(java.lang.Exception e) {
+            }
+                
+           /**
             * auto generated Axis2 call back method for addUnitFile method
             * override this method for handling normal response from addUnitFile operation
             */
@@ -234,22 +346,6 @@
            * override this method for handling error response from releasePlatform operation
            */
             public void receiveErrorreleasePlatform(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for getProfile method
-            * override this method for handling normal response from getProfile operation
-            */
-           public void receiveResultgetProfile(
-                    br.ufc.storm.webservices.CoreServicesStub.GetProfileResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getProfile operation
-           */
-            public void receiveErrorgetProfile(java.lang.Exception e) {
             }
                 
            /**
@@ -301,22 +397,6 @@
             }
                 
            /**
-            * auto generated Axis2 call back method for list method
-            * override this method for handling normal response from list operation
-            */
-           public void receiveResultlist(
-                    br.ufc.storm.webservices.CoreServicesStub.ListResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from list operation
-           */
-            public void receiveErrorlist(java.lang.Exception e) {
-            }
-                
-           /**
             * auto generated Axis2 call back method for instantiate method
             * override this method for handling normal response from instantiate operation
             */
@@ -362,22 +442,6 @@
            * override this method for handling error response from getContextContract operation
            */
             public void receiveErrorgetContextContract(java.lang.Exception e) {
-            }
-                
-           /**
-            * auto generated Axis2 call back method for getContextParameter method
-            * override this method for handling normal response from getContextParameter operation
-            */
-           public void receiveResultgetContextParameter(
-                    br.ufc.storm.webservices.CoreServicesStub.GetContextParameterResponse result
-                        ) {
-           }
-
-          /**
-           * auto generated Axis2 Error handler
-           * override this method for handling error response from getContextParameter operation
-           */
-            public void receiveErrorgetContextParameter(java.lang.Exception e) {
             }
                 
            /**

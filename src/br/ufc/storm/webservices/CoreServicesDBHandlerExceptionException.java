@@ -10,7 +10,7 @@ package br.ufc.storm.webservices;
 
 public class CoreServicesDBHandlerExceptionException extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1462805523714L;
+    private static final long serialVersionUID = 1471636402512L;
     
     private br.ufc.storm.webservices.CoreServicesStub.CoreServicesDBHandlerException faultMessage;
 

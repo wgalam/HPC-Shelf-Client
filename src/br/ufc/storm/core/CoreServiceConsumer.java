@@ -2,57 +2,94 @@ package br.ufc.storm.core;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.rmi.RemoteException;
 import java.util.Scanner;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
 import org.apache.axis2.AxisFault;
 import org.xml.sax.InputSource;
 
+import br.ufc.storm.export.FormalFormat;
+import br.ufc.storm.jaxb.CandidateListType;
 import br.ufc.storm.jaxb.ComputationalSystemType;
 import br.ufc.storm.jaxb.ContextArgumentType;
 import br.ufc.storm.jaxb.ContextContract;
 import br.ufc.storm.jaxb.ContextParameterType;
+import br.ufc.storm.jaxb.ObjectFactory;
 import br.ufc.storm.webservices.CoreServicesDBHandlerExceptionException;
 import br.ufc.storm.webservices.CoreServicesIOExceptionException;
 import br.ufc.storm.webservices.CoreServicesParserConfigurationExceptionException;
 import br.ufc.storm.webservices.CoreServicesSAXExceptionException;
 import br.ufc.storm.webservices.CoreServicesStub;
 import br.ufc.storm.webservices.CoreServicesStub.AddAbstractComponentResponse;
-import br.ufc.storm.webservices.CoreServicesStub.AddConcreteUnitResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddContextParameterResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddInnerComponentResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddUnitFileResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ConvertContextContractResponse;
 import br.ufc.storm.webservices.CoreServicesStub.DeployResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ExportComponentSignatureResponse;
+import br.ufc.storm.webservices.CoreServicesStub.ExportContextContractResponse;
 import br.ufc.storm.webservices.CoreServicesStub.GetAbstractComponentResponse;
 import br.ufc.storm.webservices.CoreServicesStub.GetContextContractResponse;
 import br.ufc.storm.webservices.CoreServicesStub.GetContextParameterResponse;
-import br.ufc.storm.webservices.CoreServicesStub.Instantiate;
 import br.ufc.storm.webservices.CoreServicesStub.InstantiateResponse;
 import br.ufc.storm.webservices.CoreServicesStub.ListContractResponse;
 import br.ufc.storm.webservices.CoreServicesStub.ListResponse;
 import br.ufc.storm.webservices.CoreServicesStub.ReleasePlatformResponse;
 import br.ufc.storm.webservices.CoreServicesStub.ResolveResponse;
-
+import br.ufc.storm.webservices.CoreServicesStub.SortCandidatesResponse;
+import br.ufc.storm.xml.XMLHandler;
 
 public class CoreServiceConsumer {
 
-
 	static final String server = "http://storm.lia.ufc.br:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/";
-
 	
 	public static void main(String[] args) {
-		String str = getContextContract(129);
-		String out = contextContractToString(str);
-		System.out.println(out);
+		//String str = getContextContract(128);
+		//String out = contextContractToString(str);
+		//System.out.println(exportContextContract(127));
+		//System.out.println(exportComponentSignature(19));
+		//System.out.println(getAbstractComponent("MatrixMultiplication"));
+
 		
-//		System.out.println(getAbstractComponent("Accelerator"));
+//		System.out.println(registerAbstractComponent("XML/testeAllyson.xml"));
+//		System.out.println(listComponents());
 		
-		//FileHandler.toHardDisk("/home/wagner/Downloads/CENAPAD-node-GPU.xml", str.getBytes());
+		
+			long tempoInicial = System.currentTimeMillis();
+			String str = resolve("XML/MatrixMultiplicationBasic.xml");
+			long tempoFinal = System.currentTimeMillis();
+			System.out.printf("Tempo de Resolução: %.3f ms%n", (tempoFinal - tempoInicial) / 1000d);
+			tempoInicial = System.currentTimeMillis();
+			String str2 = sortCandidates(str, 3);
+			tempoFinal = System.currentTimeMillis();
+			System.out.printf("Tempo de Reordenação: %.3f ms%n", (tempoFinal - tempoInicial) / 1000d);
+			try {
+				CandidateListType cl = XMLHandler.getCandidateList(str2);
+				
+				for(ContextContract cc : cl.getCandidate()){
+					System.out.println(exportContextContract(cc));
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+		 
+			
+			
+			//			FileHandler.toHardDisk("/home/wagner/Downloads/resolve_06_06_2016-16-50.xml", str.getBytes());
+		 
+		 
+
+//		
 	}
 	
 	
@@ -81,11 +118,11 @@ public class CoreServiceConsumer {
 				out+= pre+cc.getCcName()+":"+cc.getCcId()+"\n";
 			}
 //			System.out.println(cc.getContextArguments().size()+":"+cc.getAbstractComponent().getContextParameter().size());
-			for(ContextArgumentType cat: cc.getContextArguments()){
+			for(ContextArgumentType cat: cc.getContextArgumentsProvided()){
 //				System.out.println(cat.getCcId());
 				for(ContextParameterType cpt: cc.getAbstractComponent().getContextParameter()){
 //					System.out.println(cat.getVariableCpId()+":"+cpt.getCpId());
-					if(cat.getVariableCpId() == cpt.getCpId()){
+					if(cat.getCpId() == cpt.getCpId()){
 						if(cat.getContextContract()!=null){
 							out+=pre+cpt.getCpId()+":"+cpt.getName()+": "+cat.getContextContract().getCcName()+"\n";
 //							System.out.println(cat.getContextContract().getCcName()+":"+cat.getContextContract().getContextArguments().size());
@@ -108,7 +145,7 @@ public class CoreServiceConsumer {
 
 	public static void main2(String [] args){
 		System.out.println("########RESOLVING##########");
-		String str = resolve("XML/m101/mImgTbl2.xml");
+		String str = resolve("MatrixMultiplicationBasic.xml");
 //		String str = resolve("XML/mImgTblSW.xml");
 		System.out.println(str);
 		String computational = deploy(str);
@@ -170,6 +207,29 @@ public class CoreServiceConsumer {
 		return response.get_return();
 	}
 
+	public static String sortCandidates(String str, int i){	
+			CoreServicesStub stub = null;
+			try {
+				stub = new CoreServicesStub(server);
+			} catch (AxisFault e1) {
+				e1.printStackTrace();
+			}
+			//Cria a requisicao para o servico
+			CoreServicesStub.SortCandidates request;
+			request = new CoreServicesStub.SortCandidates();
+			request.setCandidateList(str);
+			request.setI(i);
+			//Invoca o servico
+			SortCandidatesResponse response = null;
+			try {
+				response = stub.sortCandidates(request);
+			} catch (RemoteException e) {
+				e.printStackTrace();
+			}
+			return response.get_return();
+		}
+	
+	
 	public static String deploy(String str){
 //		
 		CoreServicesStub stub = null;
@@ -502,6 +562,73 @@ public class CoreServiceConsumer {
 
 		try {
 			response = stub.getContextContract(request);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+
+
+
+		//		String st = new String(response.get_return());
+		return response.get_return().toString();
+	}
+	
+	public static String exportContextContract(ContextContract cc){
+		String str;
+		JAXBContext context;
+		java.io.StringWriter sw = new StringWriter();
+		try {
+			context = JAXBContext.newInstance(br.ufc.storm.jaxb.ObjectFactory.class.getPackage().getName(),
+					br.ufc.storm.jaxb.ObjectFactory.class.getClassLoader());
+			Marshaller marshaller = context.createMarshaller();
+			marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+			marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+			JAXBElement<ContextContract> element = new ObjectFactory().createContextContract(cc);
+			marshaller.marshal(element, sw);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+		str = sw.toString();
+		
+		
+		
+		
+		CoreServicesStub stub = null;
+		try {
+			stub = new CoreServicesStub();		
+		} catch (AxisFault e1) {
+			e1.printStackTrace();
+		}
+		//Cria a requisicao para o servico
+		CoreServicesStub.ConvertContextContract request;
+		request = new CoreServicesStub.ConvertContextContract();
+		request.setCmp(str);
+		//Invoca o servico
+		ConvertContextContractResponse response = null;
+
+		try {
+			response = stub.convertContextContract(request);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		}
+		return response.get_return().toString();
+	}
+	
+	public static String exportComponentSignature(int str){
+		CoreServicesStub stub = null;
+		try {
+			stub = new CoreServicesStub();		
+		} catch (AxisFault e1) {
+			e1.printStackTrace();
+		}
+		//Cria a requisicao para o servico
+		CoreServicesStub.ExportComponentSignature request;
+		request = new CoreServicesStub.ExportComponentSignature();
+		request.setAc_id(str);
+		//Invoca o servico
+		ExportComponentSignatureResponse response = null;
+
+		try {
+			response = stub.exportComponentSignature(request);
 		} catch (RemoteException e) {
 			e.printStackTrace();
 		}

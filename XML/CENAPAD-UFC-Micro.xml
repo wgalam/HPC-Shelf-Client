@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<context_contract owner_id="2" cc_id="123" cc_name="CENAPAD-UFC-Micro " xmlns="http://storm.lia.ufc.br">
+    <abstract_component id_ac="19" name="Cluster">
+        <supertype id_ac="5" name="Architecture"/>
+        <context_parameter cp_id="23" name="node">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="24" name="interconect">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="25" name="storage">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="26" name="locale">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="27" name="num_of_nodes">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="35" name="virtualization">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="1" name="TotalOfCores">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <context_parameter cp_id="2" name="TotalCost">
+            <context_variable_required_id>0</context_variable_required_id>
+        </context_parameter>
+        <quality_parameters kind_id="4" qp_id="1" name="TotalOfCores"/>
+        <cost_parameters kind_id="4" cop_id="2" name="TotalCost"/>
+    </abstract_component>
+</context_contract>

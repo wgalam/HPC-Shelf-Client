@@ -10,7 +10,7 @@ package br.ufc.storm.webservices;
 
 public class CoreServicesIOExceptionException extends java.lang.Exception{
 
-    private static final long serialVersionUID = 1462805523706L;
+    private static final long serialVersionUID = 1471636402498L;
     
     private br.ufc.storm.webservices.CoreServicesStub.CoreServicesIOException faultMessage;
 
