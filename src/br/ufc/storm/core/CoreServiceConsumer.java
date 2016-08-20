@@ -45,24 +45,23 @@ import br.ufc.storm.webservices.CoreServicesStub.ReleasePlatformResponse;
 import br.ufc.storm.webservices.CoreServicesStub.ResolveResponse;
 import br.ufc.storm.webservices.CoreServicesStub.SortCandidatesResponse;
 import br.ufc.storm.xml.XMLHandler;
+import cli.Cli;
 
 public class CoreServiceConsumer {
 
 	static final String server = "http://storm.lia.ufc.br:8080/axis2/services/CoreServices.CoreServicesHttpSoap12Endpoint/";
 	
 	public static void main(String[] args) {
-		//String str = getContextContract(128);
-		//String out = contextContractToString(str);
-		//System.out.println(exportContextContract(127));
-		//System.out.println(exportComponentSignature(19));
-		//System.out.println(getAbstractComponent("MatrixMultiplication"));
+		
+//		new Cli(args).parse();
+
 
 		
-//		System.out.println(registerAbstractComponent("XML/testeAllyson.xml"));
+//		System.out.println(registerAbstractComponent("XML/ComponenteAbstratoExemplo.xml"));
 //		System.out.println(listComponents());
 		
 		
-			long tempoInicial = System.currentTimeMillis();
+			/*long tempoInicial = System.currentTimeMillis();
 			String str = resolve("XML/MatrixMultiplicationBasic.xml");
 			long tempoFinal = System.currentTimeMillis();
 			System.out.printf("Tempo de Resolução: %.3f ms%n", (tempoFinal - tempoInicial) / 1000d);
@@ -79,17 +78,9 @@ public class CoreServiceConsumer {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			
-			
-		 
-			
-			
-			//			FileHandler.toHardDisk("/home/wagner/Downloads/resolve_06_06_2016-16-50.xml", str.getBytes());
-		 
-		 
-
-//		
+		
 	}
 	
 	

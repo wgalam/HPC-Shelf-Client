@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:abstract_component xmlns:tns="http://storm.lia.ufc.br"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://storm.lia.ufc.br ../../HPC-Shelf-Core/src/br/ufc/storm/xml/ContextualContract.xsd "
+	name="LSSapp">
+	<tns:supertype id_ac="2"></tns:supertype>
+	<tns:context_parameter name="par-teste-1" kind="1">
+		<tns:bound cc_id="21">
+		</tns:bound>
+		<tns:bound_value>tns:bound_value</tns:bound_value>
+	</tns:context_parameter>
+	<tns:inner_components name="teste1">
+		<tns:supertype id_ac="2"></tns:supertype></tns:inner_components>
+	<tns:abstract_unit au_name="teste" /><tns:slices>
+	<tns:inner_unit_name>teste</tns:inner_unit_name>
+	<tns:inner_component_name>teste1</tns:inner_component_name></tns:slices>
+</tns:abstract_component>
