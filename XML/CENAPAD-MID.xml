@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tns:context_contract xmlns:tns="http://storm.lia.ufc.br"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://storm.lia.ufc.br ../../HPC-Shelf-Core/src/br/ufc/storm/xml/ContextualContract.xsd "
-	cc_name="PlataformaTesteWagner" owner_id="1">
-	<tns:context_arguments_provided cp_id="23">
+	xsi:schemaLocation="http://storm.lia.ufc.br ../../HPC-Shelf-Core/src/br/ufc/storm/xml/ContextualContract.xsd ">
+	<tns:platform>
+		<tns:platform_contract cc_name="PlataformaDoWagner" owner_id="1">
+			
+<tns:context_arguments_provided cp_id="23">
 		<tns:context_contract cc_id="128"></tns:context_contract></tns:context_arguments_provided>
 	<tns:context_arguments_provided cp_id="24">
 		<tns:context_contract cc_id="134"></tns:context_contract></tns:context_arguments_provided>
@@ -11,4 +13,7 @@
 		<tns:context_contract cc_id="133"></tns:context_contract></tns:context_arguments_provided>
 	<tns:context_arguments_provided cp_id="27">
 		<tns:value value="8" data_type="Integer" /></tns:context_arguments_provided>
+	<tns:abstract_component name="Cluster"></tns:abstract_component>
+		</tns:platform_contract>
+	</tns:platform>
 </tns:context_contract>

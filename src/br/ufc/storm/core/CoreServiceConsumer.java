@@ -28,6 +28,8 @@ import br.ufc.storm.webservices.CoreServicesParserConfigurationExceptionExceptio
 import br.ufc.storm.webservices.CoreServicesSAXExceptionException;
 import br.ufc.storm.webservices.CoreServicesStub;
 import br.ufc.storm.webservices.CoreServicesStub.AddAbstractComponentResponse;
+import br.ufc.storm.webservices.CoreServicesStub.AddContextContract;
+import br.ufc.storm.webservices.CoreServicesStub.AddContextContractResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddContextParameterResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddInnerComponentResponse;
 import br.ufc.storm.webservices.CoreServicesStub.AddUnitFileResponse;
@@ -58,6 +60,7 @@ public class CoreServiceConsumer {
 
 		
 //		System.out.println(registerAbstractComponent("XML/ComponenteAbstratoExemplo.xml"));
+//		System.out.println(registerContextContract("XML/CENAPAD-MID.xml"));
 //		System.out.println(listComponents());
 		
 		
@@ -654,6 +657,35 @@ public class CoreServiceConsumer {
 	}*/
 
 
+	public static boolean registerContextContract(String str){
+		try {
+			str = readFile(str);
+		} catch (IOException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+//		System.out.println(str);
+		CoreServicesStub stub = null;
+		try {
+			stub = new CoreServicesStub();
+		} catch (AxisFault e1) {
+			e1.printStackTrace();
+		}
+		//Cria a requisicao para o servico
+		CoreServicesStub.AddContextContract request;
+		request = new CoreServicesStub.AddContextContract();
+		request.setCmp(str);
+		//Invoca o servico
+		AddContextContractResponse response = null;
+		try {
+			response = stub.addContextContract(request);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return response.get_return();
+	}
+	
 	public static boolean registerAbstractComponent(String str){
 		try {
 			str = readFile(str);
