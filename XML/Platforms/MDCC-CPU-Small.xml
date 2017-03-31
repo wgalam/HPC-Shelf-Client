@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<context_contract cc_name="MDCC-GPU-Micro0" owner_id="11" xmlns="http://storm.lia.ufc.br">
+    <context_arguments cp_id="23">
+        <context_contract cc_name="MDCC-GPU-Node">
+            <context_arguments cp_id="28">
+                <context_contract cc_name="E5-2650v3">
+                    <context_arguments cp_id="54">
+                        <value value="20" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="33">
+                        <value value="10" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="42">
+                        <value value="2300" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="43">
+                        <value value="640" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="44">
+                        <value value="2560" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="45">
+                        <value value="25600" data_type="Integer"/>
+                    </context_arguments>
+                    <context_arguments cp_id="28">
+                        <context_contract cc_name="Intel"/>
+                    </context_arguments>
+                    <abstract_component name="XEON"/>
+                </context_contract>
+            </context_arguments>
+            <context_arguments cp_id="49">
+                <context_contract cc_id="234"/>
+            </context_arguments>
+            <context_arguments cp_id="32">
+                <value value="2" data_type="Integer"/>
+            </context_arguments>
+            <context_arguments cp_id="38">
+                <value value="2048" data_type="Integer"/>
+            </context_arguments>
+            <context_arguments cp_id="36">
+                <value value="64" data_type="Integer"/>
+            </context_arguments>
+            <context_arguments cp_id="101">
+                <context_contract cc_id="184"/>
+            </context_arguments>
+            <abstract_component name="Node"/>
+        </context_contract>
+    </context_arguments>
+    <context_arguments cp_id="24">
+        <context_contract cc_name="MDCC-Interconnect">
+            <context_arguments cp_id="98">
+                <value value="5" data_type="Integer"/>
+            </context_arguments>
+            <context_arguments cp_id="99">
+                <value value="6.6" data_type="Float"/>
+            </context_arguments>
+            <context_arguments cp_id="97">
+                <context_contract cc_name="Star">
+                    <abstract_component name="Star"/>
+                </context_contract>
+            </context_arguments>
+            <abstract_component name="GigabitEthernet"/>
+        </context_contract>
+    </context_arguments>
+    <context_arguments cp_id="26">
+        <context_contract cc_id="144"/>
+    </context_arguments>
+    <context_arguments cp_id="27">
+        <value value="1" data_type="Double"/>
+    </context_arguments>
+    <context_arguments cp_id="35">
+        <context_contract cc_id="172"/>
+    </context_arguments>
+    <abstract_component name="Cluster"/>
+</context_contract>
